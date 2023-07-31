@@ -1,3 +1,26 @@
+# cookie-stand-api
+
+- Lab: Class 34
+- Author: Manuch Sadri
+
+## Overview
+
+doodah
+
+## Feature Tasks and Requirements
+
+doodah
+
+## Stretch Goals
+
+doodah
+
+## Set-up
+
+doodah
+
+---
+
 # api-quick-start
 
 Template Project for starting up CRUD API with Django Rest Framework
