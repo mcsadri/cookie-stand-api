@@ -9,7 +9,9 @@ doodah
 
 ## Feature Tasks and Requirements
 
-doodah
+- Use your own template
+or
+- Use API Quick Start Template
 
 ## Stretch Goals
 
