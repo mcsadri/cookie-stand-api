@@ -8,7 +8,6 @@
 
     <h5 class=" flex-auto mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ cookiestand.location }}</h5>
 
-
     <a href="{% url 'cookie_stand_update' cookiestand.pk %}">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-600">
         <path
@@ -29,11 +28,12 @@
 
   </div>
 
-  <h5 class=" flex-auto mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">Reviewed by: {{ cookiestand.owner }}</h5>
-
-
-  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ cookiestand.description }}</p>
-
+  <h5 class=" flex-auto mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">Owner: {{ cookiestand.owner }}</h5>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Description: <b>{{ cookiestand.description }}</b></p>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Hourly Sales: <b>{{ cookiestand.hourly_sales }}</b></p>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Min. Customers per hour: <b>{{ cookiestand.minimum_customers_per_hour }}</b></p>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Max. Customers per hour: <b>{{ cookiestand.maximum_customers_per_hour }}</b></p>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Avg Cookies per sale: <b>{{ cookiestand.average_cookies_per_sale }}</b></p>
 
   <div class="flex items-center">
 

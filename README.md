@@ -5,21 +5,59 @@
 
 ## Overview
 
-doodah
+Build out a Restful API as well as a user facing site for a Cookie company.
 
 ## Feature Tasks and Requirements
 
-- Use your own template
-or
-- Use API Quick Start Template
+### Templates
+Choose one:
+  - [ ] Use your own template
+  - [X] Use API Quick Start Template
+
+### Models
+- [X] The `CookieStand` model must contain:
+```python
+    location = models.CharField(max_length=256)
+        owner = models.ForeignKey(
+            get_user_model(), on_delete=models.CASCADE, null=True, blank=True
+        )
+        description = models.TextField(blank=True)
+        hourly_sales = models.JSONField(default=list, null=True)
+        minimum_customers_per_hour = models.IntegerField(default=0)
+        maximum_customers_per_hour = models.IntegerField(default=0)
+        average_cookies_per_sale = models.FloatField(default=0)
+
+        def __str__(self):
+            return self.location
+```
+- [X] Once changes are complete make migrations, migrate, and test locally.
+
+### Database Deployment
+- [X] Host your Database at ElephantSQL
+
+### Site Deployment:
+- [X] Run your site locally, but the Database should be remote.
 
 ## Stretch Goals
-
-doodah
+- [ ] Add functionality so that when a JSON array of hourly_sales is not provided at creation time it will be generated with random numbers based on minimum/maximum customers per hour and average cookies per sale.
 
 ## Set-up
 
-doodah
+- create+run virtual environment:
+  - $ ```python3.11 -m venv .venv```
+  - $ ```source .venv/bin/activate```
+- install requirements:
+  - $ ```pip install -r requirements.txt```
+- run app/server:
+  - $ ```python manage.py runserver```
+- front-end URLs:
+  - http://localhost:8000/ - home
+  - http://localhost:8000/admin/ - admin panel
+  - http://localhost:8000/api/v1/cookie_stand/ - non-styled Django front-end
+
+## Tests
+
+- n/a
 
 ---
 
