@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+  <div
+    class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <form class="space-y-6" method="POST">
+      {% csrf_token %}
+      <h5 class="text-xl font-medium text-gray-900 dark:text-white">Add a Cookie Stand Location</h5>
+
+      <div>
+        <label for="id_location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location Name</label>
+        <input type="text" name="location" id="id_location"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+               placeholder="e.g. Sheboygan" required>
+      </div>
+
+      <div>
+        <label for="id_owner" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Stand Owner</label>
+        <select name="owner" id="id_owner">
+          {% for value, choice in form.fields.owner.choices %}
+            <option value="{{ value }}">{{  choice }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div>
+        <label for="id_description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+        <input type="text" name="description" id="id_description"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+               placeholder="e.g. 123 Main Street" required>
+      </div>
+
+      <div>
+        <label for="id_hourly" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hourly Sales (use "null" for now)</label>
+        <input type="text" name="hourly" id="id_hourly"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+               placeholder="null" value="null" required>
+      </div>
+
+      <div>
+        <label for="id_min_cust" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Minimum Customers Per Hour</label>
+        <input type="number" name="min_cust" id="id_min_cust"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+               placeholder="e.g. 1" min="0" required>
+      </div>
+
+      <div>
+        <label for="id_max_cust" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Maximum Customers Per Hour</label>
+        <input type="number" name="max_cust" id="id_max_cust"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+               placeholder="e.g. 7" min="1" required>
+      </div>
+
+      <div>
+        <label for="id_avg" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Average Cookies Per Saler</label>
+        <input type="number" name="avg" id="id_avg"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+               placeholder="e.g. 7" step="0.1" required>
+      </div>
+
+      <button type="submit"
+              class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        Create
+      </button>
+
+    </form>
+  </div>
+
+{% endblock content %}

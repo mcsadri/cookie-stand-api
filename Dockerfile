@@ -12,5 +12,5 @@ WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 
-# Copy project
+# Copy cookie_stand_api_project
 COPY . /code/
